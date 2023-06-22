@@ -63,12 +63,17 @@
       if (data.trim() == 'OK') {
         thisForm.querySelector('.sent-message').classList.add('d-block');
         thisForm.reset(); 
+        
       } else {
         throw new Error(data ? data : 'Form submission failed and no error message returned from: ' + action); 
       }
     })
     .catch((error) => {
       thisForm.querySelector('.sent-message').classList.add('d-block');
+      console.log("hello darkness my old friend")
+        setTimeout(function() {
+          thisForm.querySelector('.sent-message').classList.remove('d-block');
+        }, 3500);
     });
   }
 
